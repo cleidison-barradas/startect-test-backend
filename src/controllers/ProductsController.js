@@ -13,6 +13,7 @@ module.exports = {
         return res.json(product);
     },
     async store(req,res){
+        try{
         const {filename} = req.file;
         const { name, description, category, price, } = req.body;
 
@@ -24,5 +25,8 @@ module.exports = {
             thumbnail:filename
         })
         return res.json(products);
+        }catch(err){
+            return res.status(400).json({err:err.message})
+        }
     }
 }
