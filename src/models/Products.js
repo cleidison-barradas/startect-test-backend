@@ -22,7 +22,7 @@ const ProductSchema = new mongoose.Schema({
 });
 
 ProductSchema.virtual('thumbnail_url').get(function(){
-    return `http://localhost:3333/files/${this.thumbnail}`
+    return `${process.env.APP_URL}/files/${this.thumbnail}`
 })
 ProductSchema.plugin(mongoosepaginate);
 
