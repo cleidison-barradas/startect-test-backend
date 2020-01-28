@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-express-handlebars');
 const path = require('path');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 require('dotenv').config()
 
 let transporter = nodemailer.createTransport({
