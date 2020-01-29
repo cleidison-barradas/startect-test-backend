@@ -25,5 +25,4 @@ ProductSchema.virtual('thumbnail_url').get(function(){
     return `${process.env.APP_URL}/files/${this.thumbnail}`
 })
 ProductSchema.plugin(mongoosepaginate);
-
 module.exports = mongoose.model('Product',ProductSchema);
